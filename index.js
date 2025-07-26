@@ -16,6 +16,9 @@ const pusher = new Pusher({
   cluster:  "us2",
   encrypted: true
 });
+app.get("/", (req, res)=>{
+  res.json({message: "Hello there!"});
+})
 
 // Route to send messages to the chat room (via Pusher)
 app.post('/send-message', (req, res) => {
@@ -34,3 +37,5 @@ app.post('/send-message', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+module.exports = app;
