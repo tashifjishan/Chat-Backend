@@ -1,10 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const Pusher = require('pusher');
-
+const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 5000;
-
+app.use(cors());
 // Middleware to parse incoming JSON requests
 app.use(bodyParser.json());
 
